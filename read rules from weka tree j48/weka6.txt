@@ -1,0 +1,59 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     contact-lenses
+Instances:    24
+Attributes:   5
+              age
+              spectacle-prescrip
+              astigmatism
+              tear-prod-rate
+              contact-lenses
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+tear-prod-rate = reduced: none (12.0)
+tear-prod-rate = normal
+|   astigmatism = no: soft (6.0/1.0)
+|   astigmatism = yes
+|   |   spectacle-prescrip = myope: hard (3.0)
+|   |   spectacle-prescrip = hypermetrope: none (3.0/1.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          20               83.3333 %
+Incorrectly Classified Instances         4               16.6667 %
+Kappa statistic                          0.71  
+Mean absolute error                      0.15  
+Root mean squared error                  0.3249
+Relative absolute error                 39.7059 %
+Root relative squared error             74.3898 %
+Total Number of Instances               24     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.053    0.833      1.000    0.909      0.889    0.947     0.833     soft
+                 0.750    0.100    0.600      0.750    0.667      0.596    0.813     0.592     hard
+                 0.800    0.111    0.923      0.800    0.857      0.669    0.811     0.865     none
+Weighted Avg.    0.833    0.097    0.851      0.833    0.836      0.703    0.840     0.813     
+
+=== Confusion Matrix ===
+
+  a  b  c   <-- classified as
+  5  0  0 |  a = soft
+  0  3  1 |  b = hard
+  1  2 12 |  c = none
+
